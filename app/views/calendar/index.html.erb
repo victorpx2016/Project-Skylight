@@ -1,0 +1,30 @@
+
+
+<% @post = Post.all %>
+<% @date = params[:month] ? Date.parse(params[:month]) : Date.today %>
+<div id="calendar">
+	<div id="nav_bar">
+		<div id="option_header"><p></p><center>❐ CALENDAR</center></div>
+	</div>
+	<div id="title_bar">
+	<h2 id="month">
+		<%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y/%m") %>
+		<%= @date.strftime("%B %Y") %>
+		<%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y/%m") %>
+	</h2>
+	</div>
+	<div id="home_bar">
+	<center><p></p><%= link_to '⬅ ︎BACK TO HOME', posts_path %></center></div>
+	
+	<%= calendar_for current_user.posts, :year => @date.year, :month => @date.month do |calendar| %>
+		<%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
+		<% calendar.day(:day_method => :title) do |date, post| %>
+			<%= date.day %>
+			<ul>
+			<% post.each do |post| %>
+				<li><%= link_to post.mood, post %></li>
+			<% end %>
+			</ul>
+		<% end %>
+	<% end %>
+</div>

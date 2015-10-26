@@ -1,0 +1,19 @@
+<div id="modern_header">NOTIFICATIONS
+</div> 
+
+	<div id="option_header"><%= link_to "VIEW FRIENDS", friendships_path %></div>
+
+<p></p>
+
+<% @activities.each do |activity| %>
+	<div id="blank_space_noti_date">
+		<%= activity.created_at %>
+	</div>
+	
+	<div id="blank_space_noti">
+	<%= activity.owner.name %>
+	<%= render_activity activity %>
+	</div>
+	
+<% end %>
+

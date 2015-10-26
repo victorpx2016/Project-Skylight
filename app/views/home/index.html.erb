@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= stylesheet_link_tag 'home' %>
+  	<%= csrf_meta_tags %>
+</head>
+<body> 
+	<% if notice %><center><div class="notice"><%= notice %></div></center><% end %>
+    <% if alert %><center><div class="alert"><%= alert %></div></center><% end %>
+        <div id="background_image">
+
+		<div id="logo">
+    		<%= image_tag("logo_big.png", alt: "Lr. LIFERUG") %>
+    		</div>
+    	<div id="login">
+       		<p></p>
+            	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  				<div><%= f.text_field :username, autofocus: true, placeholder: "ENTER YOUR USERNAME" %></div>
+
+ 				<div><%= f.password_field :password, autocomplete: "off", placeholder: "PASSWORD" %></div>
+
+  				<div id="sign_in_button"><%= f.submit "SIGN IN" %></div>
+  				
+  				<p></p>
+  				
+  				<% if devise_mapping.rememberable? -%>
+    				<div align="center"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  				<% end -%>
+  				<br />
+  				<hr width="300px" align="center" color="#E6E6E6" />
+  				<br />
+  				  				
+				<% end %>
+            	<table>
+            	<tr>
+            		<td><div id="no_account_box">No account <br /> yet?</div></td>
+            		<td>
+            			<div id="register_button">
+            				<%= button_to "REGISTER :)", new_user_registration_path, :method => :get %>
+            			</div>
+            		</td>
+            	</tr>
+            	</table>
+       </div>
+       <center>
+       	<div id="footer">
+            <table align="center" cellpadding="15">
+            	<tr>
+            		<td>version: BETA 1.</td>
+					<td>works best in SAFARI or CHROME.</td>
+					<td>hosted on HEROKU.</td>
+            	    <td>site created by Victor Yao.</td>
+            	    <td>background design by Brydon Yao.</td>
+            	</tr>    
+            </table>
+       </div>
+       </center>
+       </div>
+    </body>
+</html>

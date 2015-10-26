@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Skylight</title>
+  <%= stylesheet_link_tag :application, "posts" %>
+  <%= javascript_include_tag :application, "nested_form", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="container">
+    
+	    <div id="sidebar">
+	    	<%= image_tag("logo.png", alt: "Lr.", size: "80") %>
+			<div id="nav_container">					
+				<div id"nav_buttons">
+            		<%= link_to image_tag("add_post.png", alt: "Add Post", size: "80",
+            		:onmouseover => "this.src='/assets/add_post_hover.png'", 
+					:onmouseout => "this.src='/assets/add_post.png'"), new_post_path %>
+            		<%= link_to image_tag("calendar.png", alt: "Calendar", size: "80", 
+            		:onmouseover => "this.src='/assets/calendar_hover.png'", 
+					:onmouseout => "this.src='/assets/calendar.png'"), calendar_index_path %>
+            		<%= link_to image_tag("social.png", alt: "Social", size: "80", 
+            		:onmouseover => "this.src='/assets/social_hover.png'", 
+					:onmouseout => "this.src='/assets/social.png'"), activities_path %>
+            		<%= link_to image_tag("account.png", alt: "Account", size: "80", 
+            		:onmouseover => "this.src='/assets/account_hover.png'", 
+					:onmouseout => "this.src='/assets/account.png'"), edit_user_registration_path %>
+				</div>  
+            </div>
+            <div style="position:absolute;bottom:0;">
+	            <%= link_to image_tag("log_out.png", alt: "Log Out", size: "80", 
+	            :onmouseover => "this.src='/assets/log_out_hover.png'", 
+				:onmouseout => "this.src='/assets/log_out.png'"), destroy_user_session_path, method: :delete %>
+	        </div>
+	    </div>
+	    
+	    <div id="posts">  
+	    	
+	   	<% if notice %><center><div class="notice"><%= notice %></div></center><% end %>
+	    <% if alert %><center><div class="alert"><%= alert %></div></center><% end %>
+		
+		<%= yield %>
+		
+		</div>
+	    
+	    <div id="ads">
+	    <% @activities = PublicActivity::Activity.order('created_at DESC').where(owner_id: current_user.friends, 
+    owner_type: "User").limit('6') %>
+    
+	    	<% @activities.each do |activity| %>
+	<div id="index_card_sidebar">
+	<%= activity.owner.name %>
+	<%= render_activity activity %>
+	</div>
+	
+	<% end %>
+	<hr / color="#DDDDDD">
+	<div id="sidebar_heading"><center><%= link_to "See more ...", activities_path %></center></div></p>
+
+
+        </div>      
+	    </div>  
+    
+	</div>
+</body>
+
+
+</html>

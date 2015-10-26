@@ -1,0 +1,149 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+    font-family:sourceSansPro;
+    src: url(font_path("sourcesanspro_regular.otf")) format('opentype');
+    font-weight:normal;
+}
+
+@font-face {
+    font-family:sourceSansPro;
+    src: url(font_path("sourcesanspro_bold.otf")) format('opentype');
+    font-weight:bold;
+}
+
+html {
+  font-family:sourceSansPro;
+}
+
+#background_image {
+  min-width:1280px;
+  min-height:720px;
+  background-image:url(/assets/Home_1_200.png);
+  background-size: 100% 100%;
+  position:absolute;
+  margin-left:-10px;
+  margin-top:10px;
+}
+
+#logo {
+  margin-top:15px;
+  margin-left:717px;
+  position:relative;
+}
+
+#login {
+  width:370px;
+  height:360px;
+  background-color:#FFFFFF;
+  border:2px solid #E6E6E6;
+  margin-left:750px;
+  margin-top:0px;
+  position:relative;
+}
+
+#user_username, #user_password, #user_name {
+  border:10px;
+  height:30px;
+  width:280px;
+  margin-left:35px;
+  margin-right:35px;
+  padding:10px;
+}
+
+#sign_in_button input[type=submit] {
+    border:0;
+    width:300px;
+    height:50px;
+    background:#CCCCCC;
+    text-align:center;
+    margin-left:35px;
+    margin-right:35px;
+    /* Old browsers */
+}
+
+#sign_in_button input[type=submit]:hover {
+    background:#000000;
+    color:#FFFFFF;
+}
+
+#no_account_box {
+  margin-left:35px;
+  float:left;
+}
+
+#register_button input[type=submit] {
+  border:0;
+  width:150px;
+  height:50px;
+  background:#CCCCCC;
+  opacity:50%;
+  margin-left:65px;
+  float:left;
+}
+
+#register_button input[type=submit]:hover {
+    background:#000000;
+    color:#FFFFFF;
+}
+
+#footer {
+   width:1180px;
+   height:55px;
+   align:center;
+   text-align:center;
+   margin-top:110px;
+   margin-left:50px;
+   margin-right:50px;
+   position:absolute;
+   background-color:#FFFFFF;
+   border:2px solid #E6E6E6;
+}
+
+#devise_box {
+  width:370px;
+  background-color:#FFFFFF;
+  border:2px solid #E6E6E6;
+  padding:20px;
+  margin-left:750px;
+  margin-top:50px;
+  position:relative;
+}
+
+#devise_box input[type=submit] {
+    border:0;
+    width:300px;
+    height:50px;
+    background:#CCCCCC;
+    text-align:center;
+    margin-left:35px;
+    margin-right:35px;
+    font-size:10pt;
+    /* Old browsers */
+}
+
+#devise_box input[type=submit]:hover {
+    background:#000000;
+    color:#FFFFFF;
+    font-size:10pt;
+}
+
+#devise_footer {
+  width:370px;
+  height:25px;
+  padding:10px;
+  background-color:#FFFFFF;
+  border:2px solid #E6E6E6;
+  padding:20px;
+  margin-left:750px;
+  margin-top:10px;
+  position:relative;
+}
+
+#devise_header {
+  font-family:sourceSansProLight;
+  font-size:30pt;
+  text-align:center;
+}

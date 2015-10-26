@@ -1,0 +1,81 @@
+<div id="modern_header">MY LIFERUG POSTS</div>
+
+<p></p>
+
+<% @post.each do |post| %>
+
+<div id="index_card_postcontainer">
+    <div id="index_card_colomn">
+        <div id="index_card_date">
+            <div id="index_card_date_d">
+                <center>
+                    <%= post.title.strftime("%d") %>
+                </center>
+            </div>
+            <div id="index_card_date_b_y">
+                <center>
+                    <%= post.title.strftime("%b") %>&nbsp;
+                    <%= post.title.strftime("%Y") %>
+                </center>
+            </div>
+        </div>
+   
+        </p>
+    </div>
+    <div id="index_card_posttwo">
+        <div id="index_card_moodtag"><%= post.mood %></div>
+        <p></p>
+        <font id="view">
+		<%= link_to 'VIEW POST', post_path(post) %></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ◎ <%= post.tags.count %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ⁉︎︎ <%= post.comments.count %> 
+    </div>
+</div>
+<% end %>
+
+
+<!-- <% @post.each do |post| %>
+		<%= javascript_include_tag "posts" %>
+<div id=<%= post.id %>>
+    <div id="colomn">
+        <div id="date">
+            <div id="date_d">
+                <center>
+                    <%= post.title.strftime("%d") %>
+                </center>
+            </div>
+            <div id="date_b_y">
+                <center>
+                    <%= post.title.strftime("%b") %>&nbsp;
+                    <%= post.title.strftime("%Y") %>
+                </center>
+            </div>
+        </div>
+        <div id="triangle"></div>
+        <p id="edit">
+            <%= link_to '✎ Edit', edit_post_path(post) %>
+        </p>
+        <p id="edit">
+            <%= link_to '⁉︎︎ Comment', post_path(post) %>
+        </p>
+        <p id="delete">
+            <%= link_to '✕ Delete', post_path(post), method: :delete,
+            data: { confirm: 'Are you sure you want to delete this post?'} %>
+        </p>
+    </div>
+    <div id="posttwo">
+        <div id="moodtag"><%= post.mood %></div>
+        <% post.tags.each do |tag| %>
+        <div id="wordtag"><%= tag.content %></div>
+        <% end %>
+    </div>
+    <div id="comments">
+        <% post.comments.each do |comment| %>
+        <p>
+            <b><%= comment.name %></b>&nbsp;:&nbsp;<%= comment.comment %>
+        </p>
+        <% end %>
+    </div>
+</div>
+<% end %> -->
+

@@ -1,0 +1,23 @@
+<div id="modern_header">ALL USERS</div>
+<ul>
+<% @user = User.all %>
+<% @user.each do |user| %>
+	<li><%= user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= user.username %>&nbsp;&nbsp;|&nbsp;&nbsp;
+	
+	<% if current_user.friend_with? user  %>
+		Already a Friend
+	<% elsif current_user.invited? user  %>
+     	Pending	
+	<% elsif user.invited? current_user  %>
+		Pending
+	<% elsif user === current_user %>
+		N/A
+	<% else %>
+		<%= link_to "Add Friend", friendships_path(:id => user), :method => "post" %>
+	<% end %></li>
+<% end %>
+</ul>
+
+<p></p>
+
+<%= link_to "BACK", :back %>

@@ -1,0 +1,57 @@
+<div id="modern_header">
+    NEW POST
+</div>
+<br />
+<%= nested_form_for @post, url: posts_path do |f| %>
+<% if @post.errors.any? %>
+<div id="errors">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+        <li>
+            <%= msg %>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+<div id="new_edit_post_container">
+    <div id="date_picker">
+        <img id="select_arrow_one" src="/assets/select_arrow.png" />
+        <div id="vr_one"></div>
+        <img id="select_arrow_two" src="/assets/select_arrow.png" />
+        <div id="vr_two"></div>
+        <img id="select_arrow_three" src="/assets/select_arrow.png" />
+        <center>
+            <%= f.date_select :title %>
+        </center>
+    </div>
+    <div id="mood_picker">
+        <img id="select_arrow_four" src="/assets/select_arrow.png" />
+        <center>
+            <%= f.select :mood, options_for_select([":) HAPPY", ":( SAD", ":D VERY HAPPY", ":@ ANGRY", ":`( CRYING", ":0 BORED", ":/ ANNOYED", ":| NUMB", ":$ EMBARASSED", ">:) EVIL", ":# SICK", ":P CHEEKY"]),
+          		:include_blank => "Select Mood" %>
+        </center>
+    </div>
+    <div id="tag_picker">
+        <div id="tag_picker_fields">
+            <%= f.fields_for :tags do |t| %>
+            <%= t.text_field :content %>
+            <font size="5pt"><%= t.link_to_remove "✕" %></font>
+            <% end %>
+        </div>
+        <div id="add_tag_link">
+            <font size="4pt"><%= f.link_to_add "+ ADD A TAG", :tags %></font>
+        </div>
+    </div>
+    <div id="submit_button">
+        <%= f.submit %>
+    </div>
+    <% end %>
+    <div id="cancel_button">
+        <center>
+            <%= button_to '✕ Cancel', posts_path, method: :get %>
+        </center>
+    </div>
+    <div id="blank_space"></div>
+</div>

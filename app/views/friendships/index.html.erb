@@ -1,0 +1,38 @@
+<div id="modern_header">FRIENDS</div>
+
+	<div id="option_header"><%= link_to "VIEW NOTIFICATIONS", activities_path %></div>
+
+<p></p>
+<% @friend.each do |friend| %>
+	<div><%= friend.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= friend.username %></div>
+    <%= link_to "Unfriend", friendship_path(friend), :method => "delete" %>
+        <p></p>
+<% end %>
+<p></p>
+<div id="modern_header">PENDING FRIENDS</div>
+
+<p></p>
+
+<% @pending_invited_by.each do |friend| %>
+	<div><%= friend.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= friend.username %></div>
+	<%= link_to "Accept", friendship_path(friend), :method => "put" %>
+    <%= link_to "Decline", friendship_path(friend), :method => "delete" %>
+    <p></p>
+<% end %>
+<p></p>
+<div id="modern_header">FRIEND REQUESTS</div>
+<p></p>
+
+<% @pending_invited.each do |friend| %>
+	<div><%= friend.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= friend.username %></div>
+	Pending
+	    <p></p>
+<% end %>
+
+<p></p>
+
+<div><%= link_to "+ NEW FRIENDS", new_friendship_path %></div>
+
+<p></p>
+
+<%= link_to "BACK", :back %>

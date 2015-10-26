@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <%= stylesheet_link_tag "home", "posts" %>
+ <%= javascript_include_tag :application, "nested_form", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+	<div id="background_image">
+
+	<% if notice %><center><div class="notice"><%= notice %></div></center><% end %>
+    <% if alert %><center><div class="alert"><%= alert %></div></center><% end %>
+    <div id="devise_box">
+
+            	<%= yield %>
+            	
+    </div> 
+
+     	<div id="devise_footer">
+            	<center><%= link_to "BACK", :back %></center>
+       </div>
+           
+    </div>        
+    </body>
+</html>

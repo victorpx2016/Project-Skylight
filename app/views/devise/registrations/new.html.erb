@@ -1,0 +1,27 @@
+<div id="devise_header">SIGN UP</div>
+
+<br />
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div>
+  	<%= f.text_field :name, autofocus: true, placeholder: "ENTER YOUR NAME"  %></div>
+  
+  <div>
+  	<%= f.text_field :username, placeholder: "ENTER A USERNAME"  %></div>
+ 
+  <div>
+  	<%= f.email_field :email, placeholder: "EMAIL"  %></div>
+
+  <div>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "PASSWORD"  %></div>
+
+  <div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "PASSWORD CONFIRMATION" %></div>
+
+	<br />
+
+  <div><%= f.submit "SIGN UP" %></div>
+<% end %>
+<br />
+<center><%= render "devise/shared/links" %></center>

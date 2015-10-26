@@ -1,0 +1,19 @@
+<div id="devise_header">CHANGE YOUR PASSWORD</div>
+<br />
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div>
+    <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "NEW PASSWORD" %></div>
+
+  <div>    
+  	<%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "CONFIRM NEW PASSWORD" %></div>
+ <br />
+
+  <div><%= f.submit "CHANGE YOUR PASSWORD" %></div>
+<% end %>
+<br />
+
+<center><%= render "devise/shared/links" %></center>

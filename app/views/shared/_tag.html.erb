@@ -1,0 +1,6 @@
+<% for tag in @post.tags %>
+	<%= fields_for "post[tag_attributes][]", tag do |tag_field| %>
+		<h4>Tags:</h4>
+		<%= tag_field.text_field :tag %>
+	<% end %>
+<% end %>

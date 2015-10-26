@@ -1,0 +1,14 @@
+<div id="devise_header">FORGOT YOUR PASSWORD?</div>
+
+<br />
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div> 
+ 	<%= f.email_field :email, autofocus: true, placeholder: "ENTER YOUR EMAIL" %></div>
+<br />
+  <div><%= f.submit "SEND RESET INSTRUCTIONS" %></div>
+<% end %>
+<br />
+<center><%= render "devise/shared/links" %></center>
