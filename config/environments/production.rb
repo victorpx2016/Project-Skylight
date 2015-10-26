@@ -80,7 +80,7 @@ ProjectSkylight::Application.configure do
   
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
-  config.action_mailer.default_url_options = { host: '0.0.0.0:3000' }
+  config.action_mailer.default_url_options = { host: 'liferug.heroku.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :ssl => true,
@@ -88,8 +88,8 @@ ProjectSkylight::Application.configure do
     :port => 587,
     :domain => "me.com",
     :authentication => :login,
-    :user_name => "victorpx2016@icloud.com",
-    :password => "Safari98"
+    :user_name => ENV['EMAIL_ADDRESS'],
+    :password => ENV['EMAIL_PASSWORD']
    }
 
 end

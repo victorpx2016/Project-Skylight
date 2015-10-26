@@ -54,6 +54,8 @@ gem 'rack'
 
 gem 'taps'
 
+gem 'rails_12factor'
+
 # gem 'mysqltopostgres', git: "https://github.com/maxlapshin/mysql2postgres.git"
 
 # Use ActiveModel has_secure_password
