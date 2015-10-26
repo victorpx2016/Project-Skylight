@@ -11,20 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-@font-face {
-  font-family:sourceSansPro;
-  src: url(font_path("sourcesanspro_regular.otf")) format('opentype');
-  font-weight:normal;
-}
-
-@font-face {
-  font-family:sourceSansPro;
-  src: url(font_path("sourcesanspro_bold.otf")) format('opentype');
-  font-weight:bold;
-}
-
-@font-face {
-  font-family:sourceSansProLight;
-  src: url(font_path("sourcesanspro_light.otf")) format('opentype');
-}
