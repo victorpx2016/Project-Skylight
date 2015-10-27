@@ -54,7 +54,9 @@ gem 'rack'
 
 gem 'taps'
 
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
 
 # gem 'mysqltopostgres', git: "https://github.com/maxlapshin/mysql2postgres.git"
 
