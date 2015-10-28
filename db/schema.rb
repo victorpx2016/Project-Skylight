@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150805101048) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
@@ -54,9 +57,9 @@ ActiveRecord::Schema.define(version: 20150805101048) do
   create_table "posts", force: true do |t|
     t.date     "title"
     t.text     "body"
-    t.string   "mood",       default: "not sure"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mood",       default: "Not Sure"
     t.integer  "user_id"
   end
 
@@ -72,7 +75,6 @@ ActiveRecord::Schema.define(version: 20150805101048) do
   add_index "tags", ["post_id"], name: "index_tags_on_post_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.text     "name"
     t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 20150805101048) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

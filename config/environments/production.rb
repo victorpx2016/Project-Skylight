@@ -85,7 +85,7 @@ ProjectSkylight::Application.configure do
   config.action_mailer.smtp_settings = {
     :ssl => true,
     :address => "smtp.mail.me.com",
-    :port => 587,
+    :port => "587",
     :domain => "me.com",
     :authentication => :login,
     :user_name => ENV['EMAIL_ADDRESS'],
