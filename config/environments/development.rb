@@ -27,6 +27,10 @@ ProjectSkylight::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   
+  config.action_mailer.default :charset => "utf-8"
+  
+  config.assets.raise_runtime_errors = true
+  
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   
   config.action_mailer.default_url_options = { host: '0.0.0.0:3000' }
