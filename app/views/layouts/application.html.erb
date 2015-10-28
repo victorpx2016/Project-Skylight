@@ -15,10 +15,10 @@
 				<div id"nav_buttons">
             		<%= link_to image_tag("add_post.png", alt: "Add Post", size: "80",
             		:onmouseover => "image-url('add_post_hover.png')", 
-					:onmouseout => "image-url('add_post.png'')"), new_post_path %>
+					:onmouseout => "image-url('add_post.png')"), new_post_path %>
             		<%= link_to image_tag("calendar.png", alt: "Calendar", size: "80", 
-            		:onmouseover => "image-url('calendar_hover.png')", 
-					:onmouseout => "image-url('calendar.png')"), calendar_index_path %>
+            		:onmouseover => "url('calendar_hover.png')", 
+					:onmouseout => "url('calendar.png')"), calendar_index_path %>
             		<%= link_to image_tag("social.png", alt: "Social", size: "80", 
             		:onmouseover => "image-url('social_hover.png')", 
 					:onmouseout => "image-url('social.png')"), activities_path %>
