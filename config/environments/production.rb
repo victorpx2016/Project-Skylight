@@ -79,20 +79,17 @@ ProjectSkylight::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-  
-  config.action_mailer.default_url_options = { :host => 'liferug.heroku.com' }
+
+  config.action_mailer.default_url_options = { host: 'liferug.heroku.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mail.me.com',
-    port: 587,
-    domain: 'icloud.com',
-    user_name: 'victorpx2016@icloud.com',
-    password: 'Safari98',
-    authentication: 'plain',
-    enable_starttls_auto: true,
-    :openssl_verify_mode => false
+    :ssl => true,
+    :address => "smtp.mail.me.com",
+    :port => "587",
+    :domain => "me.com",
+    :authentication => :login,
+    :user_name => ENV['EMAIL_ADDRESS'],
+    :password => ENV['EMAIL_PASSWORD']
    }
 
 end
