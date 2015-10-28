@@ -14,23 +14,23 @@
 			<div id="nav_container">					
 				<div id"nav_buttons">
             		<%= link_to image_tag("add_post.png", alt: "Add Post", size: "80",
-            		:onmouseover => "this.src='/assets/add_post_hover.png'", 
-					:onmouseout => "this.src='/assets/add_post.png'"), new_post_path %>
+            		:onmouseover => "image-url("add_post_hover.png")", 
+					:onmouseout => "image-url("add_post.png")"), new_post_path %>
             		<%= link_to image_tag("calendar.png", alt: "Calendar", size: "80", 
-            		:onmouseover => "this.src='/assets/calendar_hover.png'", 
-					:onmouseout => "this.src='/assets/calendar.png'"), calendar_index_path %>
+            		:onmouseover => "image-url("calendar_hover.png")", 
+					:onmouseout => "image-url("calendar.png")"), calendar_index_path %>
             		<%= link_to image_tag("social.png", alt: "Social", size: "80", 
-            		:onmouseover => "this.src='/assets/social_hover.png'", 
-					:onmouseout => "this.src='/assets/social.png'"), activities_path %>
+            		:onmouseover => "image-url("social_hover.png")", 
+					:onmouseout => "image-url("social.png")"), activities_path %>
             		<%= link_to image_tag("account.png", alt: "Account", size: "80", 
-            		:onmouseover => "this.src='/assets/account_hover.png'", 
-					:onmouseout => "this.src='/assets/account.png'"), edit_user_registration_path %>
+            		:onmouseover => "image-url("account_hover.png")", 
+					:onmouseout => "image-url("account.png")"), edit_user_registration_path %>
 				</div>  
             </div>
             <div style="position:absolute;bottom:0;">
 	            <%= link_to image_tag("log_out.png", alt: "Log Out", size: "80", 
-	            :onmouseover => "this.src='/assets/log_out_hover.png'", 
-				:onmouseout => "this.src='/assets/log_out.png'"), destroy_user_session_path, method: :delete %>
+	            :onmouseover => "image-url("log_out_hover.png")", 
+				:onmouseout => "image-url("log_out_hover.png")"), destroy_user_session_path, method: :delete %>
 	        </div>
 	    </div>
 	    
