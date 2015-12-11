@@ -17,17 +17,17 @@
 <% end %>
 <div id="new_edit_post_container">
     <div id="date_picker">
-        <img id="select_arrow_one" src="/assets/select_arrow.png" />
+        <%= image_tag("select_arrow.png", :id => "select_arrow_one") %>
         <div id="vr_one"></div>
-        <img id="select_arrow_two" src="/assets/select_arrow.png" />
+        <%= image_tag("select_arrow.png", :id => "select_arrow_two") %>
         <div id="vr_two"></div>
-        <img id="select_arrow_three" src="/assets/select_arrow.png" />
+        <%= image_tag("select_arrow.png", :id => "select_arrow_three") %>
         <center>
             <%= f.date_select :title %>
         </center>
     </div>
     <div id="mood_picker">
-        <img id="select_arrow_four" src="/assets/select_arrow.png" />
+        <%= image_tag("select_arrow.png", :id => "select_arrow_four") %>
         <center>
             <%= f.select :mood, options_for_select([":) HAPPY", ":( SAD", ":D VERY HAPPY", ":@ ANGRY", ":`( CRYING", ":0 BORED", ":/ ANNOYED", ":| NUMB", ":$ EMBARASSED", ">:) EVIL", ":# SICK", ":P CHEEKY"]),
           		:include_blank => "Select Mood" %>
